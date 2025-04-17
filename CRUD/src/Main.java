@@ -9,13 +9,14 @@ public class Main {
         System.out.println("[2] List Tasks");
         System.out.println("[3] Update Task");
         System.out.println("[4] Delete Task");
-        System.out.println("[5] Exit");
+        System.out.println("[5] Search Task");
+        System.out.println("[6] Exit");
         System.out.println("=========================");
         System.out.printf("Type your choice: ");
     }
 
     static Crud CreateObject(Scanner sc){
-        sc.nextLine();
+        sc.nextLine(); // Consome quebra de linha
         System.out.printf("Description: ");
         String desc = sc.nextLine();
         System.out.printf("Priority (1 to 10): ");
@@ -76,7 +77,7 @@ public class Main {
                 case 3 :
                     System.out.print("Type the ID that you want to update: ");
                     id = sc.nextInt();
-                    sc.nextLine(); // Consome quebra de linha
+                    
                     if (task != null) {
                         task.UpdateTask(id, sc);
                     } else {
@@ -87,7 +88,7 @@ public class Main {
                 case 4 :
                     System.out.print("Type the ID that you want to delete: ");
                     id = sc.nextInt();
-                    sc.nextLine(); // Consome quebra de linha
+                    
                     if (task != null) {
                         task.DeleteTask(id, sc);
                     } else {
@@ -96,8 +97,16 @@ public class Main {
                     break;
 
                 case 5 :
+                    System.out.print("Type the ID that you want to delete: ");
+                    id = sc.nextInt();
+            
+                    task.ShowTask(id);
+                    break;
+
+                case 6:
                     System.out.println("App Close");
                     break;
+                
                 default :
                     System.out.println("[ERRO] Invalid Option");
                     break;

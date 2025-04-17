@@ -160,7 +160,6 @@ class Crud {
             File mainfile = new File("TaskManeger.txt");
             mainfile.delete();
             temp.renameTo(mainfile);
-
     
         } catch (Exception e) {
             System.out.println("[ERRO] Fail to write to File");
@@ -212,5 +211,38 @@ class Crud {
         }
 
         return true;
+    }
+
+    public void ShowTask(int id){
+        boolean exist_id = SearchTaskId(id);
+
+        if(!exist_id){
+            return;
+        }else{
+            try {
+                BufferedReader br = new BufferedReader(new FileReader("TaskManeger.txt"));
+    
+                String linha = br.readLine();
+    
+                String []arrLinha = new String[4];
+    
+                while(linha != null){
+                    arrLinha = linha.split(";");
+                    int id_atual = Integer.parseInt(arrLinha[0]);
+    
+                    if(id_atual == id){
+                        System.out.println("\n" + linha + "\n");
+                        break;
+                    }
+                }
+    
+                br.close();
+    
+            } catch (Exception e) {
+                System.out.println("[ERRO] Fail to read the File");
+            }
+    
+    
+        }
     }
 }
