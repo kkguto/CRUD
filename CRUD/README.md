@@ -1,18 +1,24 @@
-## Getting Started
+# 📋 CRUD de Gerenciamento de Tarefas
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📝 Descrição
 
-## Folder Structure
+Este projeto consiste em um sistema **CRUD (Create, Read, Update, Delete)** desenvolvido em **Java**, com foco na **gestão de tarefas**. As tarefas são armazenadas em um arquivo de texto (`TaskManager.txt`), permitindo o registro **persistente** dos dados.
 
-The workspace contains two folders by default, where:
+## ⚙️ Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- ➕ Adicionar novas tarefas com título e descrição;
+- 📄 Listar todas as tarefas salvas;
+- 🔍 Buscar tarefas por ID;
+- ✏️ Atualizar tarefas existentes;
+- ❌ Remover tarefas existentes.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## 🛠 Tecnologias e Recursos Utilizados
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Linguagem **Java**;
+- Manipulação de arquivos com:
+  - `FileReader`
+  - `BufferedReader`
+  - `FileWriter`
+  - `BufferedWriter`
+- Leitura de dados via `Scanner`;
+- Organização do código em classes, com a lógica principal concentrada na classe `Crud`.
