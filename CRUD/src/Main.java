@@ -97,7 +97,7 @@ public class Main {
                     break;
 
                 case 5 :
-                    System.out.print("Type the ID that you want to delete: ");
+                    System.out.print("Type the ID that you want to search: ");
                     id = sc.nextInt();
             
                     task.ShowTask(id);
@@ -112,7 +112,7 @@ public class Main {
                     break;
             }
 
-        }while(escolha != 5);
+        }while(escolha != 6);
 
         sc.close();
     }

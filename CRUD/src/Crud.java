@@ -217,6 +217,7 @@ class Crud {
         boolean exist_id = SearchTaskId(id);
 
         if(!exist_id){
+            System.out.println("Task with ID " + id + " not found.");
             return;
         }else{
             try {
@@ -225,15 +226,23 @@ class Crud {
                 String linha = br.readLine();
     
                 String []arrLinha = new String[4];
-    
+
+
                 while(linha != null){
+
                     arrLinha = linha.split(";");
                     int id_atual = Integer.parseInt(arrLinha[0]);
-    
+
                     if(id_atual == id){
-                        System.out.println("\n" + linha + "\n");
+                        System.out.println("\nTask Found:");
+                        System.out.println("ID: " + arrLinha[0]);
+                        System.out.println("Description: " + arrLinha[1]);
+                        System.out.println("Priority: " + arrLinha[2]);
+                        System.out.println("Status: " + arrLinha[3]);
                         break;
                     }
+
+                    linha = br.readLine();
                 }
     
                 br.close();
